@@ -1,28 +1,62 @@
 set shell=/bin/bash
 
+" ALE LINTER
+
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['black', 'isort'],
+\   'javascript': ['eslint']
+\}
+let g:ale_linters = {
+\   'python': ['pylint'],
+\   'javascript': ['eslint']
+\}
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+" PLUGIN MANAGEMENT
+
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-airline/vim-airline' 
+Plug 'thaerkh/vim-indentguides'
+Plug 'vim-airline/vim-airline'
 Plug 'mhartington/oceanic-next'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dylanaraps/wal.vim'
-Plug 'joshdick/onedark.vim' 
+Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
-
+Plug 'iamcco/markdown-preview.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sleuth'
+Plug 'mileszs/ack.vim'
+Plug 'justinmk/vim-sneak'
 
 call plug#end()
 
 " USER SETTINGS
 
 set showcmd
+
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 nmap <Space> <Leader>
 
-syntax enable 
+syntax enable
 
 set wildmode=full
 set wildmenu
+
+" set listchars=tab:>·,space:·
+" set list
 
 set laststatus=2
 set noshowmode
@@ -30,27 +64,51 @@ set number
 set termguicolors
 
 colorscheme onedark
+" hi Normal guibg=NONE ctermbg=NONE
 
-" NERD TREE SETTINGS 
+" SNEAK.VIM
+
+let g:sneak#label = 1
+
+" ACK.VIM
+
+let g:ackprg = 'ag --vimgrep'
+
+" INDENT GUIDES
+
+let g:indentguides_firstlevel = 0
+
+" MARKDOWN PREVIEW
+
+let g:mkdp_path_to_chrome = "surf"
+
+" NERD TREE
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "*",
     \ "Staged"    : "+",
-    \ "Untracked" : "✭",
+    \ "Untracked" : "NEW",
     \ "Renamed"   : "➜",
     \ "Unmerged"  : "═",
     \ "Deleted"   : "DEL",
     \ "Dirty"     : "MOD",
     \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
+    \ 'Ignored'   : 'x',
     \ "Unknown"   : "?"
     \ }
 
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+let NERDTreeShowHidden=1
+
+let g:NERDTreeWinSize=24
 
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = '<'
 
+no <C-j> <C-w>j
+no <C-k> <C-w>k
+no <C-l> <C-w>l
+no <C-h> <C-w>h
 nnoremap <silent> <Leader>f :NERDTreeFind<CR>
 nnoremap <Leader>n :NERDTreeToggle<Enter>
 

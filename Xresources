@@ -1,13 +1,14 @@
 Xft.antialias: true
 Xft.hinting:   true
-Xft.dpi: 150 
+Xft.dpi: 140
 Xft.rgba:      none
 Xft.autohint:  0
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 URxvt.intensityStyles: false
 
-XTerm*background:        #222D31
+XTerm*background:       #282C34
+! #222D31
 XTerm*foreground:        #d8d8d8
 XTerm*pointerColor:      #1ABB9B
 XTerm*faceName:          Fixed
@@ -15,7 +16,8 @@ XTerm*faceSize:          11
 XTerm*reverseVideo:      on
 XTerm*selectToClipboard: true
 
-*background:                      #222D31
+*background:                      #282C34
+! #222D31
 *foreground:                      #d8d8d8
 *fading:                          8
 *fadeColor:                       black
@@ -66,11 +68,10 @@ URxvt*font:                       xft:mono:medium:size=11:antialias=true:hinting
 !! terminus names see end of file!
 
 URxvt.depth:                      32
-URxvt.background:                 [100]#222D31
+URxvt.background:                 [100]#282C34
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
 URxvt*cursorBlink:                true
-URxvt*background:                 black
 URxvt*foreground:                 grey
 URxvt*saveLines:                  5000
 
@@ -176,7 +177,7 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 URxvt*internalBorder:             32
 ! URxvt*borderLess:                 true
 ! URxvt*lineSpace:                  number
-URxvt*letterSpace:               1 
+URxvt*letterSpace:               1
 ! URxvt*skipBuiltinGlyphs:          boolean
 ! URxvt*pointerBlankDelay:          number
 ! URxvt*backspacekey:               string
