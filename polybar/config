@@ -98,6 +98,22 @@ label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
+[module/mpd]
+type = internal/mpd
+format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+
+host = 127.0.0.1
+port = 6600
+
+icon-prev = >
+icon-stop = X
+icon-play = S
+icon-pause = ||
+icon-next = >
+
+label-song-maxlen = 25
+label-song-ellipsis = true
+
 [module/filesystem]
 type = internal/fs
 interval = 25
