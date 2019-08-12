@@ -70,7 +70,7 @@ set noshowmode
 set number
 set termguicolors
 
-colorscheme onedark
+colorscheme OceanicNext " onedark
 " hi Normal guibg=NONE ctermbg=NONE
 
 " TEMPLATE LITERAL HIGHLIGHT
