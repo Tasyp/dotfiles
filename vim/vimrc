@@ -1,18 +1,13 @@
-set shell=/bin/bash
+set nocompatible
 
 " ALE LINTER
 "
 let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
+let g:ale_completion_tsserver_autoimport = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['black', 'isort'],
-\   'javascript': ['eslint']
-\}
-let g:ale_linters = {
-\   'python': ['pylint'],
-\   'javascript': ['flow', 'eslint']
 \}
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
@@ -20,86 +15,42 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'thaerkh/vim-indentguides'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-airline/vim-airline'
 Plug 'mhartington/oceanic-next'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'dylanaraps/wal.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'iamcco/markdown-preview.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
-Plug 'mileszs/ack.vim'
 Plug 'justinmk/vim-sneak'
-Plug 'Quramy/vim-js-pretty-template'
-Plug 'maralla/completor.vim'
-Plug 'maralla/completor-typescript'
+Plug 'rhysd/vim-grammarous'
 
 call plug#end()
 
-" USER SETmaralla/completor-typescriptTINGS
-
-set showcmd
-
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
 nmap <Space> <Leader>
 
 syntax enable
+filetype plugin on
 
+set showcmd
+" set path+=**
+" set wildignore+=**/node_modules/**
 set wildmode=full
 set wildmenu
-
-" SET SMALLER TABS FOR GOLANG
-autocmd Filetype go setlocal tabstop=4
-
-" set listchars=tab:>·,space:·
-" set list
-
+set backspace=indent,eol,start
 set laststatus=2
 set noshowmode
 set number
 set termguicolors
 
 colorscheme OceanicNext " onedark
-" hi Normal guibg=NONE ctermbg=NONE
-
-" TEMPLATE LITERAL HIGHLIGHT
-
-autocmd FileType javascript JsPreTmpl css
-autocmd FileType typescript JsPreTmpl css
-autocmd FileType typescript.tsx JsPreTmpl css
 
 " SNEAK.VIM
-
 let g:sneak#label = 1
-
-" ACK.VIM
-
-let g:ackprg = 'ag --vimgrep'
-
-" Javascript Highlight
-
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_flow = 1
-
-
-" INDENT GUIDES
-
-let g:indentguides_firstlevel = 0
-
-" MARKDOWN PREVIEW
-
-let g:mkdp_path_to_chrome = "surf"
 
 " NERD TREE
 let g:NERDTreeIndicatorMapCustom = {
@@ -117,10 +68,8 @@ let g:NERDTreeIndicatorMapCustom = {
 
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-let NERDTreeShowHidden=1
-
-let g:NERDTreeWinSize=24
-
+let NERDTreeShowHidden = 1
+let g:NERDTreeWinSize = 24
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = '<'
 
@@ -133,5 +82,4 @@ nnoremap <Leader>n :NERDTreeToggle<Enter>
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

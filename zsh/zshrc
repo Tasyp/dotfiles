@@ -1,0 +1,44 @@
+source /usr/local/share/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+
+# Plugins
+antigen bundle lukechilds/zsh-nvm
+antigen bundle laggardkernel/zsh-thefuck
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle fasd
+
+# Theme
+antigen theme sunquan1991/aplos aplos
+
+antigen apply
+
+if [ $commands[ondir] ]; then
+  eval_ondir() {
+    eval "`ondir \"$OLDPWD\" \"$PWD\"`"
+  }
+  chpwd_functions=( eval_ondir $chpwd_functions )
+fi
+
+if [ $commands[direnv] ]; then
+  eval "$(direnv hook zsh)"
+fi
+
+get_secret() {
+ pass show "secrets/$1"
+}
+
+# alias ctags="`brew --prefix`/bin/ctags"
+alias yl="yarn lint"
+alias yb="yarn build"
+alias yt="yarn test"
+alias yf="yarn fix"
+
+export NVM_DIR="$HOME/.nvm"
+export NPM_TOKEN="$(get_secret npm_token)"
+export GITHUB_TOKEN="$(get_secret github_token)"
+export LC_ALL=en_US.UTF-8
+export EDITOR='vim'
+export PATH="$HOME/.cargo/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
