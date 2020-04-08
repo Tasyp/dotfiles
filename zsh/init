@@ -1,0 +1,20 @@
+#! /bin/bash
+
+if [ $commands[ondir] ]; then
+  eval_ondir() {
+    eval "`ondir \"$OLDPWD\" \"$PWD\"`"
+  }
+  chpwd_functions=( eval_ondir $chpwd_functions )
+fi
+
+if [ $commands[direnv] ]; then
+  eval "$(direnv hook zsh)"
+fi
+
+if [ $commands[rbenv] ]; then
+  eval "$(rbenv init -)"
+fi
+
+if [ $commands[pyenv] ]; then
+  eval "$(pyenv init -)"
+fi

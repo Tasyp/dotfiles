@@ -1,0 +1,17 @@
+#! /bin/bash
+
+get_secret() {
+  if [ $commands[pass] ]; then
+   pass show "secrets/$1"
+  fi
+}
+
+export EDITOR='vim'
+export NPM_TOKEN="$(get_secret npm_token)"
+export GITHUB_TOKEN="$(get_secret github_token)"
+
+# System specific variables
+[ -r ~/.zsh/variables.system ] && . ~/.zsh/variables.system
+
+# Local variables (not synced with git)
+[ -r ~/.zsh/variables.local ] && . ~/.zsh/variables.local

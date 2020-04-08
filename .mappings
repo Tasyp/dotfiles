@@ -1,5 +1,14 @@
 [general]
 "vim/vimrc" = "~/.vimrc"
 "zsh/zshrc" = "~/.zshrc"
+"zsh/aliases" = "~/.zsh/aliases"
+"zsh/init" = "~/.zsh/init"
+"zsh/variables" = "~/.zsh/variables"
 "git/gitconfig" = "~/.gitconfig"
 "git/gitignore" = "~/.gitignore"
+
+[darwin]
+"zsh/variables.macos" = "~/.zsh/variables.system"
+
+[linux]
+"zsh/variables.linux" = "~/.zsh/variables.system"
