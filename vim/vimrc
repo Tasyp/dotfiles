@@ -1,7 +1,7 @@
 set nocompatible
 
-" ALE LINTER
-"
+" LINTER
+
 let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
@@ -13,21 +13,24 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " PLUGIN MANAGEMENT
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'dense-analysis/ale'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'joshdick/onedark.vim'
+Plug 'tpope/vim-vinegar'
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'justinmk/vim-sneak'
-Plug 'rhysd/vim-grammarous'
 
 call plug#end()
 
@@ -37,8 +40,8 @@ syntax enable
 filetype plugin on
 
 set showcmd
-" set path+=**
-" set wildignore+=**/node_modules/**
+" set path=$PWD/**
+" set wildignore+=*/node_modules/*
 set wildmode=full
 set wildmenu
 set backspace=indent,eol,start
@@ -47,39 +50,26 @@ set noshowmode
 set number
 set termguicolors
 
-colorscheme OceanicNext " onedark
+colorscheme OceanicNext
+
+" LIGHTLINE
+
+let g:lightline = {
+\   'colorscheme': 'one',
+\}
 
 " SNEAK.VIM
+
 let g:sneak#label = 1
 
-" NERD TREE
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "*",
-    \ "Staged"    : "+",
-    \ "Untracked" : "NEW",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "DEL",
-    \ "Dirty"     : "MOD",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : 'x',
-    \ "Unknown"   : "?"
-    \ }
+" NETRW
 
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-let NERDTreeShowHidden = 1
-let g:NERDTreeWinSize = 24
-let g:NERDTreeDirArrowExpandable = '>'
-let g:NERDTreeDirArrowCollapsible = '<'
+let g:netrw_altv = 1
+let g:netrw_liststyle = 3
+let g:netrw_fastbrowse = 0
+let g:netrw_winsize = 23
 
 no <C-j> <C-w>j
 no <C-k> <C-w>k
 no <C-l> <C-w>l
 no <C-h> <C-w>h
-nnoremap <silent> <Leader>f :NERDTreeFind<CR>
-nnoremap <Leader>n :NERDTreeToggle<Enter>
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
