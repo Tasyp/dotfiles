@@ -1,1 +1,1 @@
-Dotfils are manages using [dot](https://github.com/ubnt-intrepid/dot)
+Dotfils are managed using [dot](https://github.com/ubnt-intrepid/dot)
