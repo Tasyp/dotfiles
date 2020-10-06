@@ -1,0 +1,14 @@
+#! /bin/bash
+
+export EDITOR='vim'
+export NPM_TOKEN={{ pass "secrets/npm_token" }}
+export GITHUB_TOKEN={{ pass "secrets/github_token" }}
+
+# System specific variables
+{{ if eq .chezmoi.os "darwin" -}}
+export LC_ALL=en_US.UTF-8
+{{ else if eq .chezmoi.os "linux" -}}
+{{ end -}}
+
+# Local variables (not synced with git)
+[ -r ~/.zsh/variables.local ] && . ~/.zsh/variables.local

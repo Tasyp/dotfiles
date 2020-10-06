@@ -1,0 +1,7 @@
+#! /bin/bash
+
+alias yl="yarn lint"
+alias yb="yarn build"
+alias yt="yarn test"
+alias yf="yarn fix"
+alias brake="bundle exec rake"

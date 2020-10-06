@@ -1,0 +1,77 @@
+set nocompatible
+
+" LINTER
+
+let g:ale_sign_column_always = 1
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:ale_completion_tsserver_autoimport = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+" PLUGIN MANAGEMENT
+
+" VIM-PLUG AUTOINSTALL
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'itchyny/lightline.vim'
+Plug 'mhartington/oceanic-next'
+Plug 'dense-analysis/ale'
+Plug 'sheerun/vim-polyglot'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-vinegar'
+Plug 'justinmk/vim-sneak'
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+
+call plug#end()
+
+nmap <Space> <Leader>
+
+syntax enable
+filetype plugin on
+
+set splitbelow
+set splitright
+set showcmd
+" set path=$PWD/**
+" set wildignore+=*/node_modules/*
+set wildmode=full
+set wildmenu
+set backspace=indent,eol,start
+set laststatus=2
+set noshowmode
+set number
+set termguicolors
+
+colorscheme OceanicNext
+
+" LIGHTLINE
+
+let g:lightline = {
+\   'colorscheme': 'one',
+\}
+
+" SNEAK.VIM
+
+let g:sneak#label = 1
+
+" NETRW
+
+let g:netrw_liststyle = 3
+let g:netrw_fastbrowse = 0
+
+no <C-j> <C-w>j
+no <C-k> <C-w>k
+no <C-l> <C-w>l
+no <C-h> <C-w>h
