@@ -1,1 +1,1 @@
-Dotfils are manages using [chezmoi](https://github.com/twpayne/chezmoi)
+Dotfils are managed using [chezmoi](https://github.com/twpayne/chezmoi)

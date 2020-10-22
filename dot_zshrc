@@ -8,6 +8,7 @@ antigen bundle laggardkernel/zsh-thefuck
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle fasd
+antigen bundle StackExchange/blackbox
 
 # Theme
 antigen theme sunquan1991/aplos aplos
