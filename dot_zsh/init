@@ -18,3 +18,7 @@ fi
 if [ $commands[pyenv] ]; then
   eval "$(pyenv init -)"
 fi
+
+if [ $commands[fasd] ]; then
+  eval "$(fasd --init auto)"
+fi

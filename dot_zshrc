@@ -1,19 +1,10 @@
-source ~/.zsh/antigen
+source <(~/.zsh/antibody init)
 
-antigen use oh-my-zsh
-
-# Plugins
-antigen bundle lukechilds/zsh-nvm
-antigen bundle laggardkernel/zsh-thefuck
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle fasd
-antigen bundle StackExchange/blackbox
+# Init antibody
+antibody bundle < ~/.zsh/plugins
 
 # Theme
-antigen theme sunquan1991/aplos aplos
-
-antigen apply
+. ~/.zsh/theme
 
 # Aliases and variables
 [ -r ~/.zsh/init ] && . ~/.zsh/init

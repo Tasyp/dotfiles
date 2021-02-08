@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+setopt PROMPT_SUBST
+autoload -U colors && colors
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+zstyle ':vcs_info:git:*' formats '%b'
+
+PROMPT='
+%{$fg_bold[yellow]%}%2~%{$reset_color%} %{$fg_bold[blue]%}${vcs_info_msg_0_}%{$reset_color%}
+❯ '

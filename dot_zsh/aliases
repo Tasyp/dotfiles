@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env zsh
 
 alias yl="yarn lint"
 alias yb="yarn build"
