@@ -1,6 +1,14 @@
-source <(~/.zsh/antibody init)
+#!/usr/bin/env zsh
+
+# Auto-install antibody
+if [ ! -f ~/.zsh/antibody ]; then
+	curl -sfL git.io/antibody | sh -s - -b ~/.zsh
+fi
 
 # Init antibody
+source <(~/.zsh/antibody init)
+
+# Plugins
 antibody bundle < ~/.zsh/plugins
 
 # Theme

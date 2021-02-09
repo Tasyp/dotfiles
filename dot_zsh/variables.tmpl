@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env zsh
 
 export EDITOR='nvim'
 
@@ -15,7 +15,7 @@ export GITHUB_TOKEN={{ pass "secrets/github_token" }}
 {{ if eq .chezmoi.os "darwin" -}}
 export LC_ALL=en_US.UTF-8
 {{ else if eq .chezmoi.os "linux" -}}
-{{ end -}}
+{{ end }}
 
 # Local variables (not synced with git)
 [ -r ~/.zsh/variables.local ] && . ~/.zsh/variables.local
