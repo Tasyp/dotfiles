@@ -7,3 +7,28 @@ alias yf="yarn fix"
 alias brake="bundle exec rake"
 alias vim="nvim"
 alias vi="nvim"
+
+function v {
+	vim `f $@`
+}
+
+function iv {
+	vim `sf $@`
+}
+
+function che {
+	case $1 in
+		s)
+			chezmoi update
+		;;
+		e)
+			chezmoi edit --apply `f ${@:2}`
+		;;
+		ie)
+			chezmoi edit --apply `sf ${@:2}`
+		;;
+		*)
+			chezmoi edit --apply `f ${@:2}`
+		;;
+	esac
+}
