@@ -18,6 +18,9 @@ function iv {
 
 function che {
 	case $1 in
+		cd)
+			chezmoi cd
+		;;
 		s)
 			chezmoi update
 		;;
@@ -28,7 +31,7 @@ function che {
 			chezmoi edit --apply `sf ${@:2}`
 		;;
 		*)
-			chezmoi edit --apply `f ${@:2}`
+			chezmoi edit --apply `f $@`
 		;;
 	esac
 }
