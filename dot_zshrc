@@ -2,7 +2,7 @@
 
 # Auto-install antibody
 if [ ! -f ~/.zsh/antibody ]; then
-	curl -sfL git.io/antibody | sh -s - -b ~/.zsh
+  curl -sfL git.io/antibody | sh -s - -b ~/.zsh
 fi
 
 # Init antibody
