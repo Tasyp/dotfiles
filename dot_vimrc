@@ -93,3 +93,5 @@ no <C-j> <C-w>j
 no <C-k> <C-w>k
 no <C-l> <C-w>l
 no <C-h> <C-w>h
+no 0 ^
+no ^ 0
