@@ -34,6 +34,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
 Plug 'unblevable/quick-scope'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
 call plug#end()
