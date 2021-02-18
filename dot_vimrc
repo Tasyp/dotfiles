@@ -11,6 +11,10 @@ let g:ale_fixers = {
 \}
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
+" QUICK-SCOPE
+
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
 " PLUGIN MANAGEMENT
 
 " VIM-PLUG AUTOINSTALL
