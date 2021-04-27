@@ -8,8 +8,6 @@ let g:ale_completion_enabled = 1
 let g:ale_completion_autoimport = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier', 'eslint'],
-\   'typescript': ['prettier', 'eslint', 'tsserver'],
 \}
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 

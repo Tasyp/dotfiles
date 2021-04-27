@@ -1,5 +1,11 @@
 #!/usr/bin/env zsh
 
+{{ if eq .chezmoi.os "darwin" -}}
+if [ $commands[brew] ]; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+{{ end  -}}
+
 if [ $commands[ondir] ]; then
   eval_ondir() {
     eval "`ondir \"$OLDPWD\" \"$PWD\"`"
