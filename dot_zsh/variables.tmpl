@@ -14,7 +14,6 @@ export GITHUB_TOKEN={{ pass "secrets/github_token" }}
 # System specific variables
 {{ if eq .chezmoi.os "darwin" -}}
 export LC_ALL=en_US.UTF-8
-export HOMEBREW_BUNDLE_FILE=~/.zsh/Brewfile
 {{ else if eq .chezmoi.os "linux" -}}
 {{ end }}
 
