@@ -17,6 +17,10 @@ cask "paw"
 cask "google-chrome"
 cask "mullvadvpn"
 cask "obsidian"
+cask "coteditor"
+cask "kap"
+cask "db-browser-for-sqlite"
+cask "postico"
 EOF
 
 brew bundle --global
