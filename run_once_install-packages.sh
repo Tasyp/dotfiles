@@ -6,6 +6,7 @@ tap "homebrew/cask"
 
 brew "pass"
 brew "neovim"
+brew "direnv"
 
 cask "firefox"
 cask "visual-studio-code"
