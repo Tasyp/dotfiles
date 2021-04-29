@@ -61,6 +61,10 @@ set noshowmode
 set number relativenumber
 set ruler
 set termguicolors
+set nobackup
+set nowritebackup
+set updatetime=300
+set signcolumn=yes
 
 " Quick-scope
 
