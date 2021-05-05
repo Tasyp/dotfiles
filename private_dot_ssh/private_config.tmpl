@@ -4,6 +4,7 @@ Host *
   ForwardAgent yes
   IdentityFile ~/.ssh/id_rsa
 
+{{ if lookPath "pass"  -}}
 Host dev-env
   HostName {{ pass "servers/dev-env" }}
   User tasyp
@@ -13,3 +14,4 @@ Host ttu-linux
   Hostname {{ pass "servers/ttu-linux" }}
   User tasyp
   RemoteForward /home/tasyp/.gnupg/S.gpg-agent {{ .chezmoi.homedir }}/.gnupg/S.gpg-agent.extra
+{{ end -}}
