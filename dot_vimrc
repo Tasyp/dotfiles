@@ -11,14 +11,14 @@ let g:ale_fixers = {
 \}
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:coc_global_extensions = [
-  'coc-json',
-  'coc-tsserver',
-  'coc-css',
-  'coc-html',
-  'coc-yaml',
-  'coc-svelte',
-  'coc-graphql'
-]
+      \'coc-json',
+      \'coc-tsserver',
+      \'coc-css',
+      \'coc-html',
+      \'coc-yaml',
+      \'coc-svelte',
+      \'coc-graphql',
+      \]
 
 " QUICK-SCOPE
 
