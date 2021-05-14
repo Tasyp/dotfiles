@@ -10,7 +10,15 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \}
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-css', 'coc-html']
+let g:coc_global_extensions = [
+  'coc-json',
+  'coc-tsserver',
+  'coc-css',
+  'coc-html',
+  'coc-yaml',
+  'coc-svelte',
+  'coc-graphql'
+]
 
 " QUICK-SCOPE
 
@@ -30,7 +38,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'itchyny/lightline.vim'
 Plug 'mhartington/oceanic-next'
-" Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
