@@ -62,11 +62,23 @@ set laststatus=2
 set noshowmode
 set number relativenumber
 set ruler
-set termguicolors
 set nobackup
 set nowritebackup
 set updatetime=300
 set signcolumn=yes
+
+" Mosh
+function! IsMosh()
+  let output = system('is_mosh -v')
+  if v:shell_error
+    return 0
+  endif
+  return !empty(l:output)
+endfunction
+
+if !IsMosh()
+  set termguicolors
+endif  
 
 " Quick-scope
 
