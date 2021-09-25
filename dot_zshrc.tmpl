@@ -2,7 +2,11 @@
 
 # Auto-install antibody
 if [ ! -f ~/.zsh/antibody ]; then
+  {{ if eq .chezmoi.os "darwin" -}}
+  ln -s /opt/homebrew/bin/antibody ~/.zsh/antibody
+  {{ else if eq .chezmoi.os "linux" -}}
   curl -sfL git.io/antibody | sh -s - -b ~/.zsh
+  {{ end }}
 fi
 
 # Init antibody
