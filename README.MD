@@ -23,7 +23,7 @@ Dotfils are managed using [chezmoi](https://github.com/twpayne/chezmoi)
 2. Init dotfiles
 
    ```shell
-   $ chezmoi init https://github.com/tasyp/dotfiles.git
+   $ chezmoi init https://github.com/tasyp/dotfiles.git --apply
    ```
 
 3. Sync on demand
