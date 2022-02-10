@@ -9,7 +9,6 @@ let g:coc_global_extensions = [
       \'coc-html',
       \'coc-yaml',
       \'coc-svelte',
-      \'coc-graphql',
       \'coc-prettier',
       \]
 
