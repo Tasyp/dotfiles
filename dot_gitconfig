@@ -1,6 +1,6 @@
 [user]
-	name = German Ivanov
-	email = germivanov@gmail.com
+	name = German Öö
+	email = german.oo@hey.com
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
