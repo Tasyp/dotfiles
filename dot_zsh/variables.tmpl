@@ -6,6 +6,11 @@ if [ $commands[yarn] ]; then
   export PATH="$(yarn global bin):$PATH"
 fi
 
+if [ $commands[volta] ]; then
+  export VOLTA_HOME="$HOME/.volta"
+  export PATH="$VOLTA_HOME/bin:$PATH"
+fi
+
 {{ if lookPath "pass" -}}
 export NPM_TOKEN={{ pass "secrets/npm_token" }}
 export GITHUB_TOKEN={{ pass "secrets/github_token" }}
