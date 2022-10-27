@@ -4,3 +4,6 @@ tags.lock
 tags.temp
 .ctags
 .idea
+.vsode
+yalc.lock
+.yalc
