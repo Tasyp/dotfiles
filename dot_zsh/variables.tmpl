@@ -11,11 +11,6 @@ if [ $commands[volta] ]; then
   export PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
-{{ if lookPath "pass" -}}
-export NPM_TOKEN={{ pass "secrets/npm_token" }}
-export GITHUB_TOKEN={{ pass "secrets/github_token" }}
-{{ end  -}}
-
 # System specific variables
 {{ if eq .chezmoi.os "darwin" -}}
 export LC_ALL=en_US.UTF-8
