@@ -2,7 +2,7 @@
 
 ## Overview
 
-Dotfils are managed using [chezmoi](https://github.com/twpayne/chezmoi)
+Dotfiles are managed using [chezmoi](https://github.com/twpayne/chezmoi)
 
 ## How to use?
 
