@@ -6,7 +6,8 @@ if [ $commands[yarn] ]; then
   export PATH="$(yarn global bin):$PATH"
 fi
 
-if [ $commands[volta] ]; then
+# Asdf usually takes care of everything
+if [ $commands[volta] && ! $commands[asdf] ]; then
   export VOLTA_HOME="$HOME/.volta"
   export PATH="$VOLTA_HOME/bin:$PATH"
 fi
