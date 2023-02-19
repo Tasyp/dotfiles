@@ -8,3 +8,4 @@ tags.temp
 .vsode
 yalc.lock
 .yalc
+.elixir_ls

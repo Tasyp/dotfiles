@@ -1,3 +1,4 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "typescriptreact", "typescript"]
+  "coc.preferences.formatOnSaveFiletypes": ["css", "typescriptreact", "typescript"],
+  "semanticTokens.enable": true
 }
