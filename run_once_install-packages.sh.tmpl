@@ -13,14 +13,14 @@ brew "antibody"
 brew "rbw"
 brew "pinentry-mac"
 brew "node"
-brew "volta"
+brew "asdf"
 
 cask "firefox"
 cask "visual-studio-code"
 cask "slack"
 cask "iterm2"
 cask "alfred"
-cask "paw"
+cask "rapidapi"
 cask "google-chrome"
 cask "coteditor"
 cask "kap"
@@ -33,5 +33,5 @@ cask "bitwarden"
 cask "bartender"
 EOF
 
-brew bundle --global
+brew bundle --global --no-lock
 {{ end -}}

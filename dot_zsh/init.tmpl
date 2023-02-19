@@ -24,7 +24,8 @@ if [ $commands[fasd] ]; then
   eval "$(fasd --init auto)"
 fi
 
-if [ $commands[fnm] ]; then
-  eval "$(fnm env --shell=zsh)"
+{{ if eq .chezmoi.os "darwin" -}}
+if [ $commands[asdf] ]; then
+  . $(brew --prefix asdf)/libexec/asdf.sh
 fi
-
+{{ end }}

@@ -6,12 +6,6 @@ if [ $commands[yarn] ]; then
   export PATH="$(yarn global bin):$PATH"
 fi
 
-# Asdf usually takes care of everything
-if [ $commands[volta] ]; then
-  export VOLTA_HOME="$HOME/.volta"
-  export PATH="$VOLTA_HOME/bin:$PATH"
-fi
-
 # System specific variables
 {{ if eq .chezmoi.os "darwin" -}}
 export LC_ALL=en_US.UTF-8
