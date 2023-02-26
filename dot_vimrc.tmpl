@@ -46,6 +46,8 @@ Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
 Plug 'unblevable/quick-scope'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -143,3 +145,4 @@ no <C-l> <C-w>l
 no <C-h> <C-w>h
 no 0 ^
 no ^ 0
+nnoremap <silent> <C-f> :Files<CR>
