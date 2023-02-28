@@ -4,9 +4,17 @@ alias yl="yarn lint"
 alias yb="yarn build"
 alias yt="yarn test"
 alias yf="yarn fix"
+
 alias brake="bundle exec rake"
+
 alias vim="nvim"
 alias vi="nvim"
+
+# tmux
+alias t="tmux"
+alias ta="t a -t"
+alias tls="t ls"
+alias tn="t new -t"
 
 function v {
 	vim `f $@`
