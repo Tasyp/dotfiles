@@ -34,6 +34,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
+Plug 'edkolev/tmuxline.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
@@ -43,11 +44,13 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
 Plug 'justinmk/vim-sneak'
 Plug 'unblevable/quick-scope'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -129,6 +132,10 @@ colorscheme OceanicNext
 let g:lightline = {
 \   'colorscheme': 'one',
 \}
+
+" Tmux lightline
+let g:tmuxline_powerline_separators = 0
+let g:tmuxline_preset = 'minimal'
 
 " SNEAK.VIM
 
