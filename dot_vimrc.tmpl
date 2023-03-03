@@ -34,7 +34,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
-Plug 'edkolev/tmuxline.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
@@ -51,6 +50,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'alvan/vim-closetag'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -133,10 +134,6 @@ let g:lightline = {
 \   'colorscheme': 'one',
 \}
 
-" Tmux lightline
-let g:tmuxline_powerline_separators = 0
-let g:tmuxline_preset = 'minimal'
-
 " SNEAK.VIM
 
 let g:sneak#label = 1
@@ -145,6 +142,14 @@ let g:sneak#label = 1
 
 let g:netrw_liststyle = 3
 let g:netrw_fastbrowse = 0
+
+" Closetags
+
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.html.eex'
+
+" Autopairs
+
+let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`", '<%=':'%>'}
 
 no <C-j> <C-w>j
 no <C-k> <C-w>k
