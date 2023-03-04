@@ -41,7 +41,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-vinegar'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-hijack.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'justinmk/vim-sneak'
@@ -138,10 +139,10 @@ let g:lightline = {
 
 let g:sneak#label = 1
 
-" NETRW
+" Fern
 
-let g:netrw_liststyle = 3
-let g:netrw_fastbrowse = 0
+hi FernBranchText guifg='#6699cc' ctermfg=68
+nmap <Leader>- :Fern . -reveal=%<CR>
 
 " Closetags
 
