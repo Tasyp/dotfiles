@@ -1,19 +1,20 @@
 #!/usr/bin/env zsh
 
 # Auto-install antibody
-if [ ! -f ~/.zsh/antibody ]; then
+if [ ! -f ~/.zsh/antidote ]; then
   {{ if eq .chezmoi.os "darwin" -}}
-  ln -s /opt/homebrew/bin/antibody ~/.zsh/antibody
+  ln -s /opt/homebrew/opt/antidote/share/antidote/antidote.zsh ~/.zsh/antidote
   {{ else if eq .chezmoi.os "linux" -}}
-  curl -sfL git.io/antibody | sh -s - -b ~/.zsh
+  git clone --depth=1 https://github.com/mattmc3/antidote.git ~/.zsh/.antidote
+  ln -s ~/.zsh/.antidote/antidote.zsh ~/.zsh/antidote
   {{ end }}
 fi
 
 # Init antibody
-source <(~/.zsh/antibody init)
+source ~/.zsh/antidote 
 
 # Plugins
-antibody bundle < ~/.zsh/plugins
+antidote load ~/.zsh/plugins
 
 # Theme
 . ~/.zsh/theme
