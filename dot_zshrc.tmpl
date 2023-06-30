@@ -1,13 +1,20 @@
 #!/usr/bin/env zsh
 
+{{ if eq .chezmoi.os "darwin" -}}
+# Auto complete for homebrew
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+{{ end }}
+
 # Auto-install antibody
 if [ ! -f ~/.zsh/antidote ]; then
-  {{ if eq .chezmoi.os "darwin" -}}
-  ln -s /opt/homebrew/opt/antidote/share/antidote/antidote.zsh ~/.zsh/antidote
-  {{ else if eq .chezmoi.os "linux" -}}
   git clone --depth=1 https://github.com/mattmc3/antidote.git ~/.zsh/.antidote
   ln -s ~/.zsh/.antidote/antidote.zsh ~/.zsh/antidote
-  {{ end }}
 fi
 
 # Init antibody
